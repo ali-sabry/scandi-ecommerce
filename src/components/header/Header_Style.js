@@ -4,9 +4,9 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 50px;
     padding-right: 30px;
-    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,6 +32,7 @@ export const Links = styled.nav`
                 color: #000;
                 padding-bottom: 5px;
                 margin-right: 10px;
+                font-size: 16px;
             }
             .active {
                 color: #54dd7e;

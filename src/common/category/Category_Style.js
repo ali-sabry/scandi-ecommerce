@@ -2,16 +2,21 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
     text-transform: capitalize;
-    font-size: 33px;
+    font-size: 42px;
     margin-bottom: 0;
     margin-left: 15px;
 `;
 
 export const Container = styled.section`
+    width: 100%;
     padding: 25px 0;
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(256px, 1fr));
+    gap: 40px;
+
+    @media screen and (min-width: 1440px) {
+        grid-template-columns: repeat(3, minmax(356px, 1fr));
+    }
 
     @media screen and (max-width: 992px) {
         grid-template-columns: repeat(2, minmax(250px, 1fr));

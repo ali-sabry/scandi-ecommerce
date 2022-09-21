@@ -84,15 +84,6 @@ class Overlay extends Component {
                                     key={`${item.value}_${index}`}
                                     className={product.attr && product.attr[attr.name]
                                       === item.value ? 'active' : ''}
-                                    onClick={(e) => {
-                                      this.props.updateAttributes(
-                                        product.id,
-                                        { [attr.name]: item.value },
-                                      );
-                                      Array.from(e.target.parentElement.children).forEach((el) => el.classList.remove('active'));
-                                      e.target.classList.add('active');
-                                      attr.name !== 'Color' ? e.target.style.cssText = 'border-color: #000' : false;
-                                    }}
                                     style={{
                                       backgroundColor: `${attr.name === 'Color' && item.value}`,
                                       padding: `${attr.name === 'Color' && '10px'}`,
@@ -116,12 +107,8 @@ class Overlay extends Component {
                         <span>{product.quantity}</span>
                         <img
                           onClick={() => this.props.decreaseQuantity(product.id)}
-                          src={product.quantity === 1 ? Assets.Delete : Assets.Minus}
+                          src={Assets.Minus}
                           alt="Minus"
-                          style={{
-                            border: `${product.quantity === 1 ? '2px solid #000' : 'none'}`,
-                            padding: `${product.quantity === 1 ? '2px' : 0}`,
-                          }}
                         />
                       </S.Quantity>
                     </S.ProductInfo>

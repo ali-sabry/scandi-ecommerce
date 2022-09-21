@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-    height: 100vh;
     padding: 50px 0;
 `;
 
@@ -18,6 +17,7 @@ export const CartHead = styled.h2`
     text-align: left;
     text-transform: capitalize;
     margin: 20px 0;
+    font-size: 32px;
 `;
 
 export const ProductContainer = styled.div`
@@ -48,7 +48,9 @@ export const ProductInfo = styled.div`
 
 export const ProductName = styled.h3`
     text-transform: capitalize;
+    font-size: 30px;
     span {
+        font-size: 30px;
         font-weight: 400;
         display: block;
         width: 100%;
@@ -69,6 +71,11 @@ export const Attributes = styled.ul`
         border: 2px solid #000;
         display: inline-block;
         margin: 2px;
+        width: 63px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .active {
@@ -90,9 +97,9 @@ export const Price = styled.h4`
 
 export const PriceSymbol = styled.span`
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     span {
-        font-weight: normal
+        font-weight: 700;
     }
 `;
 
@@ -102,7 +109,7 @@ export const Quantity = styled.div`
     height: 288px;
     align-items: center;
     justify-content: space-between;
-    margin-right: -20px;
+    margin-right: 16px;
 
     @media screen and (max-width: 992px) {
         margin-right: 20px;
@@ -118,7 +125,7 @@ export const Quantity = styled.div`
 `;
 
 export const ProductImg = styled.div`
-    width: 240px;
+    width: 200px;
     height: 288px;
     display: flex;
     justify-content: center;
@@ -154,23 +161,32 @@ export const Controlls = styled.div`
 export const Footer = styled.div`
     border-top: 2px solid #e1e1e1;
 
-
     div {
         width: 25%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         text-transform: capitalize;
+        font-size: 24px;
         
         span {
-            font-weight: bold;
             margin: 5px 0;
         }
-
+        
         span:first-of-type {
-            opacity: .8;
             font-weight: 400;
+            opacity: .8;
             text-transform: capitalize;
+        }
+    }
+
+    div:last-child {
+        span:first-of-type {
+            font-weight: 500;
+        }
+
+        span:last-of-type {
+            font-weight: 700;
         }
     }
 `;
@@ -182,7 +198,12 @@ export const Button = styled.button`
     border: ${(props) => props.border};
     color: ${(props) => props.color};   
     margin-top: 15px;
-    width: 30%;
+    width: 279px;
+    height: 43px;
+
+    @media screen and (min-width: 1440px) {
+        padding: 16px, 32px, 16px, 32px;
+    }
 `;
 
 export const Line = styled.div`

@@ -42,13 +42,7 @@ class Cart extends Component {
           </S.EmptyCart>
         ) : (
           <>
-            <S.CartHead>
-              my bag
-              {' '}
-              {this.props.cartData.cartProducts.length}
-              {' '}
-              items
-            </S.CartHead>
+            <S.CartHead>cart</S.CartHead>
             <div>
               {this.props.cartData.cartProducts.map((product) => (
                 <S.ProductContainer key={`${product.id}`}>
@@ -59,8 +53,6 @@ class Cart extends Component {
                         <span>{product.brand}</span>
                       </S.ProductName>
                       <S.Price>
-                        price:
-                        {' '}
                         <S.PriceSymbol>
                           {product.prices[this.props.productsReducer.currencyIndex].currency.symbol}
                           <span>
@@ -72,7 +64,7 @@ class Cart extends Component {
                       {
                         product.attributes.map((productAttr) => (
                           <div key={productAttr.name}>
-                            <h4>
+                            <h4 style={{ fontSize: '30px' }}>
                               {productAttr.name}
                               :
                             </h4>
@@ -97,51 +89,49 @@ class Cart extends Component {
                       }
                     </div>
                   </S.ProductInfo>
-                  <S.Quantity>
-                    <img
-                      onClick={() => this.props.increaseQuantity(product.id)}
-                      src={Assets.Plus}
-                      alt="Plus"
-                    />
-                    <span>{product.quantity}</span>
-                    <img
-                      onClick={() => this.props.decreaseQuantity(product.id)}
-                      src={product.quantity === 1 ? Assets.Delete : Assets.Minus}
-                      alt="Minus"
-                      style={{
-                        border: `${product.quantity === 1 ? '2px solid #000' : 'none'}`,
-                        padding: `${product.quantity === 1 ? '2px' : 0}`,
-                      }}
-                    />
-                  </S.Quantity>
-                  <S.ProductImg>
-                    <img src={product.gallery[product.galleryIndex]} alt="productImage" />
-                    {
-                      product.gallery.length > 1
-                        ? (
-                          <S.Controlls>
-                            <img
-                              style={{
-                                pointerEvents: `${product.galleryIndex === 0 ? 'none' : ''}`,
-                                opacity: `${product.galleryIndex === 0 ? 0.3 : 1}`,
-                              }}
-                              onClick={() => this.props.decreaseGalleryIndex(product.id)}
-                              src={Assets.Prev}
-                              alt="PrevImage"
-                            />
-                            <img
-                              style={{
-                                pointerEvents: `${product.galleryIndex === product.gallery.length - 1 ? 'none' : ''}`,
-                                opacity: `${product.galleryIndex === product.gallery.length - 1 ? 0.3 : 1}`,
-                              }}
-                              onClick={() => this.props.increaseGalleryIndex(product.id)}
-                              src={Assets.Next}
-                              alt="NextImage"
-                            />
-                          </S.Controlls>
-                        ) : false
-                    }
-                  </S.ProductImg>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <S.Quantity>
+                      <img
+                        onClick={() => this.props.increaseQuantity(product.id)}
+                        src={Assets.Plus}
+                        alt="Plus"
+                      />
+                      <span>{product.quantity}</span>
+                      <img
+                        onClick={() => this.props.decreaseQuantity(product.id)}
+                        src={Assets.Minus}
+                        alt="Minus"
+                      />
+                    </S.Quantity>
+                    <S.ProductImg>
+                      <img src={product.gallery[product.galleryIndex]} alt="productImage" />
+                      {
+                        product.gallery.length > 1
+                          ? (
+                            <S.Controlls>
+                              <img
+                                style={{
+                                  pointerEvents: `${product.galleryIndex === 0 ? 'none' : ''}`,
+                                  opacity: `${product.galleryIndex === 0 ? 0.3 : 1}`,
+                                }}
+                                onClick={() => this.props.decreaseGalleryIndex(product.id)}
+                                src={Assets.Prev}
+                                alt="PrevImage"
+                              />
+                              <img
+                                style={{
+                                  pointerEvents: `${product.galleryIndex === product.gallery.length - 1 ? 'none' : ''}`,
+                                  opacity: `${product.galleryIndex === product.gallery.length - 1 ? 0.3 : 1}`,
+                                }}
+                                onClick={() => this.props.increaseGalleryIndex(product.id)}
+                                src={Assets.Next}
+                                alt="NextImage"
+                              />
+                            </S.Controlls>
+                          ) : false
+                      }
+                    </S.ProductImg>
+                  </div>
                 </S.ProductContainer>
               ))}
               <S.Footer>

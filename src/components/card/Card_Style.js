@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     position: relative;
-    min-width: 230px;
+    min-width: 100%;
+    height: 444px;
     padding: 15px;
     border-radius: 7px;
     transition: all .3s ease;
@@ -71,8 +72,8 @@ export const Price = styled.h2`
 
 export const Icon = styled.div`
     position: absolute;
-    bottom: 90px;
-    right: 15px;
+    bottom: 117px;
+    right: 24px;
     justify-content: center;
     align-items: center;
     width: 35px;
@@ -83,5 +84,9 @@ export const Icon = styled.div`
     cursor: pointer;
     img {
         filter: brightness(10.5);
+    }
+
+    @media screen and (min-width: 1440px) {
+        bottom: 120px;
     }
 `;

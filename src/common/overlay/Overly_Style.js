@@ -41,8 +41,9 @@ export const CartBody = styled.div`
 
 export const EmptyCart = styled.div`
     img {
-        max-width: 100%;
-        margin-bottom: 50px
+        width: 100%;
+        height: 37vh;
+        margin-bottom: 50px;
     }
 `;
 
@@ -51,6 +52,7 @@ export const CartHead = styled.h2`
     width: 100%;
     text-align: left;
     text-transform: capitalize;
+    margin-bottom: 20px;
 `;
 
 export const ProductContainer = styled.div`
@@ -92,6 +94,9 @@ export const Quantity = styled.div`
 export const ProductName = styled.h3`
     text-transform: capitalize;
     width: 99%;
+    margin-top: 0;
+    font-weight: normal;
+
     span {
         font-weight: 400;
         display: block;
@@ -114,7 +119,11 @@ export const Attributes = styled.ul`
         border: 2px solid #000;
         display: inline-block;
         margin: 2px;
-        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .active {
@@ -127,6 +136,7 @@ export const Attributes = styled.ul`
 export const Price = styled.h4`
     width: 100%;
     text-transform: uppercase;
+    margin: 15px 0;
     span {
         dispaly: block;
         width: 100%;
@@ -167,6 +177,11 @@ export const Footer = styled.div`
         display: flex;
         justify-content: space-between;
         margin-bottom: 15px;
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+        }
     }
 `;
 
@@ -177,4 +192,9 @@ export const Button = styled.button`
     padding: ${(props) => props.padding};
     border: ${(props) => props.border};
     color: ${(props) => props.color};   
+
+    @media screen and (min-width: 1440px) {
+        width: 140px;
+        height: 43px;
+    }
 `;

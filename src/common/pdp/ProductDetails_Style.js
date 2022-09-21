@@ -22,8 +22,8 @@ export const ProductGallery = styled.div`
     }
 
     div {
-        width: 70%;
-        height: 100px;
+        width: 176.65px;
+        height: 87.61px;
         margin: 10px auto;
         object-fit: cover;
         background-color: #f9f9f9;
@@ -56,10 +56,12 @@ export const ProductGallery = styled.div`
 
 export const ImageWrapper = styled.div`
     width: 43%;
-    height: fit-content;
+
     border-radius: 7px;
     overflow: hidden;
     background: #f9f9f9;
+    position: relative;
+    opacity: ${(props) => props.opacity};
 
     @media screen and (max-width: 776px) {
         width: 50%;
@@ -70,6 +72,19 @@ export const ImageWrapper = styled.div`
         width: 100%;
         height: 100%
     }
+`;
+
+export const OutOfStock = styled.h2`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 24px;
+    color: #8D8F9A;
+    text-transform: uppercase;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 `;
 
 export const OptionsWrapper = styled.div`
@@ -85,12 +100,14 @@ export const OptionsWrapper = styled.div`
 export const ProductHead = styled.h1`
     font-size: 35px;
     text-transform: capitalize;
+    margin-top: 0;
     span {
         font-weight: 400;
         display: block;
         width: 100%;
         margin-top: 7px;
     }
+
 `;
 
 export const ProductBody = styled.div`
@@ -114,6 +131,14 @@ export const Attributes = styled.ul`
         display: inline-block;
         margin: 5px;
         cursor: pointer;
+
+        @media screen and (min-width: 1440px) {
+            width: 63px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .active {
@@ -131,6 +156,10 @@ export const Price = styled.h1`
         width: 100%;
         margin-top: 15px;
     }
+
+    @media screen and (min-width: 1440px) {
+        font-size: 24px;
+    }
 `;
 
 export const Button = styled.button`
@@ -143,7 +172,12 @@ export const Button = styled.button`
     padding: 15px 20px;
     cursor: pointer;
     pointer-events: ${(props) => props.pointer};
-    opacity: ${(props) => props.opacity}
+    opacity: ${(props) => props.opacity};
+    margin: 15px 0;
+
+    @media screen and (min-width: 1440px) {
+        width: 292px;
+    }
 `;
 
 export const Description = styled.div`

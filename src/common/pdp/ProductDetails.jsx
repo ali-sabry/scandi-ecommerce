@@ -47,7 +47,9 @@ class Details extends Component {
                   </div>
                 ))}
               </S.ProductGallery>
-              <S.ImageWrapper>
+              <S.ImageWrapper opacity={this.props.query.data.product.inStock ? '1' : '.5'}>
+                {!this.props.query.data.product.inStock
+                  && <S.OutOfStock>out of stock</S.OutOfStock>}
                 <img src={this.props.query.data.product.gallery[this.props.productReducers.imgIndex]} alt="productImage" />
               </S.ImageWrapper>
               <S.OptionsWrapper>
@@ -61,7 +63,7 @@ class Details extends Component {
                   {
                     this.props.query.data.product.attributes.map((productAttr) => (
                       <div key={productAttr.name}>
-                        <h1>
+                        <h1 style={{ fontSize: '18px' }}>
                           {productAttr.name}
                           :
                         </h1>

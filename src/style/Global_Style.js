@@ -10,6 +10,18 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding-top: 50px;
     font-family: 'Raleway', sans-serif;
+    
+    @media screen and (min-width: 1440px) {
+      min-width: 1440px;
+    }
+
+    @media screen and (max-width: 992px) {
+      width: 100%;
+    }
+   }
+
+   main {
+      width: 100%;
    }
 
    .container {
